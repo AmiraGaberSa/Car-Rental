@@ -1,6 +1,6 @@
 <IfModule mod_rewrite.c>
     <IfModule mod_negotiation.c>
-        Options -MultiViews -Indexes
+        Options -MultiViews
     </IfModule>
 
     RewriteEngine On
@@ -19,3 +19,6 @@
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteRule ^ index.php [L]
 </IfModule>
+ErrorDocument 404   http://localhost/project_cars_r4/404.php
+# Disable directory indexing
+Options -Indexes
