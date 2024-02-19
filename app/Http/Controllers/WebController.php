@@ -43,7 +43,7 @@ class WebController extends Controller
     public function single(string $id)
     {        
         $cars = Car::findOrFail($id);
-        $categories = Category::get(); 
+        $categories = Category::get();         
         return view('user.single', compact('cars','categories'));
     }
 

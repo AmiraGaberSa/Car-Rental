@@ -14,8 +14,8 @@
             <div class="col-lg-12">
 
               <div class="intro">
-                <h1><strong>Single Blog Posts Title</strong></h1>
-                <div class="pb-4"><strong class="text-black">Posted on May 22, 2020</strong></div>
+                <h1><strong>{{$cars->title}}</strong></h1>
+                <div class="pb-4"><strong class="text-black">Posted on {{ date('F d, Y', strtotime($cars->created_at)) }}</strong></div>
               </div>
 
             </div>
