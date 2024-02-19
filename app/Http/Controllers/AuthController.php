@@ -26,10 +26,10 @@ class AuthController extends Controller
         // Authentication passed...
         $user = Auth::user();
         if ($user->active == 0) {
-            return redirect()->intended('index');
+            return redirect()->intended('/');
         }
         Session::put('fullName', $user->fullName); // Store the user's name in session
-        return redirect()->intended('users'); // Redirect to admin dashboard 
+        return redirect()->intended('admin/users'); // Redirect to admin dashboard 
     }
 
        return redirect()->back()->withErrors(['error' => 'Invalid username or password']);
@@ -41,7 +41,7 @@ class AuthController extends Controller
          
         Auth::logout();
         Session::forget('userName'); // Remove the user's name from session
-        return redirect()->route('index');
+        return redirect()->route('home');
     }
 
 
