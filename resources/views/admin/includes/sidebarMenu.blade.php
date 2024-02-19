@@ -24,7 +24,19 @@
                                 <li><a><i class="fa fa-desktop"></i> Testimonials <span class="fa fa-chevron-down"></span></a>
 									<ul class="nav child_menu">
 										<li><a href="{{ route('addTestimonials') }}">Add Testimonials</a></li>
-										<li><a href="{{ route('testimonial') }}">Edit Testimonials</a></li>
+										<li><a href="{{ route('testimonial') }}">Testimonials List</a></li>
+									</ul>
+								</li>
+								<li><a><i class="fa fa-desktop"></i> Teams <span class="fa fa-chevron-down"></span></a>
+									<ul class="nav child_menu">
+										<li><a href="{{ route('addTeam') }}">Add Teams</a></li>
+										<li><a href="{{ route('teams') }}">Teams List</a></li>
+									</ul>
+								</li>
+								<li><a><i class="fa fa-desktop"></i> Blogs <span class="fa fa-chevron-down"></span></a>
+									<ul class="nav child_menu">
+										<li><a href="{{ route('addBlog') }}">Add Blogs</a></li>
+										<li><a href="{{ route('blogs') }}">Blogs List</a></li>
 									</ul>
 								</li>
                                 <li><a><i class="fa fa-desktop"></i> Messages <span class="fa fa-chevron-down"></span></a>

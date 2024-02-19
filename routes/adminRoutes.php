@@ -5,6 +5,8 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CarController;
 use App\Http\Controllers\TestimonialController;
+use App\Http\Controllers\BlogController;
+use App\Http\Controllers\TeamController;
 use App\Http\Controllers\ContactController;
 
 
@@ -40,6 +42,22 @@ Route::middleware(['auth', 'active','verified'])->prefix('admin')->group(functio
     Route::get('editTestimonials/{id}', [TestimonialController::class, 'edit'])->name('editTestimonials');
     Route::put('updateTestimonials/{id}', [TestimonialController::class, 'update'])->name('updateTestimonials');
     Route::get('deleteTestimonial/{id}',[TestimonialController::class,'destroy'])->name('deleteTestimonial');
+
+    //blog
+    Route::get('addBlog', [BlogController::class, 'create'])->name('addBlog');
+    Route::post('storeBlog', [BlogController::class, 'store'])->name('storeBlog');
+    Route::get('blogs', [BlogController::class, 'index'])->name('blogs');  
+    Route::get('editBlog/{id}', [BlogController::class, 'edit'])->name('editBlog');
+    Route::put('updateBlog/{id}', [BlogController::class, 'update'])->name('updateBlog');
+    Route::get('deleteBlog/{id}',[BlogController::class,'destroy'])->name('deleteBlog');
+
+    //team
+    Route::get('addTeam', [TeamController::class, 'create'])->name('addTeam');
+    Route::post('storeTeam', [TeamController::class, 'store'])->name('storeTeam');
+    Route::get('teams', [TeamController::class, 'index'])->name('teams');  
+    Route::get('editTeam/{id}', [TeamController::class, 'edit'])->name('editTeam');
+    Route::put('updateTeam/{id}', [TeamController::class, 'update'])->name('updateTeam');
+    Route::get('deleteTeam/{id}',[TeamController::class,'destroy'])->name('deleteTeam');
 
     //contact
     //d.b store from page form

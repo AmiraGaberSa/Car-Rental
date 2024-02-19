@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Models\Testimonial;
 use App\Models\Category;
 use App\Models\Car;
+use App\Models\Blog;
+use App\Models\Team;
 //use Illuminate\Database\Eloquent\Collection;
 
 class WebController extends Controller
@@ -20,7 +22,8 @@ class WebController extends Controller
 
     public function about()
     {
-        return view('user.about');
+        $teams = Team::where('active', 1)->orderBy('id', 'desc')->take(6)->get();
+        return view('user.about',compact('teams'));
     }
 
     public function blog()
@@ -51,5 +54,11 @@ class WebController extends Controller
     {
         $testimonials = Testimonial::where('published', 1)->orderBy('id', 'desc')->get();
         return view('user.testimonials', compact('testimonials'));        
+    }
+
+    public function blogs()
+    {
+        $blogs = Blog::where('published', 1)->orderBy('id', 'desc')->paginate(6);   
+        return view('user.blog', compact('blogs'));        
     }
 }

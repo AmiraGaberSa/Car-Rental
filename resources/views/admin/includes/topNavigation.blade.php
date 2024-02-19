@@ -36,7 +36,7 @@
 												<span class="time">{{ $unread->created_at->diffForHumans() }}</span>
 											</span>
 											<span class="message">
-											{{ $unread->message }}
+											{{ substr($unread->message, 0, 100) }}{{ strlen($unread->message) > 100 ? "..." : "" }}
 											</span>
 										</a>
 									</li>

@@ -36,6 +36,7 @@ Route::get('/contact', [WebController::class, 'contact'])->name('contact');
 Route::get('/listing', [WebController::class, 'listing'])->name('listing');
 Route::get('single/{id}', [WebController::class, 'single'])->name('single');
 Route::get('/testimonials', [WebController::class, 'testimonials'])->name('testimonials');
+Route::get('/blog', [WebController::class, 'blogs'])->name('blog');
 
 
 
